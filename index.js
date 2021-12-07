@@ -23,7 +23,7 @@ async function run() {
       privateKeyPath,
       type: projectType,
     });
-    const ans = await project[actionType]({
+    const ans = await ci[actionType]({
       project,
       version,
       setting: {
