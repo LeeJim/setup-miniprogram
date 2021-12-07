@@ -15,7 +15,7 @@ async function run() {
 
     const timestamp = new Date().getTime();
     const privateKeyPath = `./private.${timestamp}.key`;
-    await fs.outputFile(privateKeyDir, MINI_APP_PRIVATE_KEY);
+    await fs.outputFile(privateKeyPath, MINI_APP_PRIVATE_KEY);
 
     const project = new ci.Project({
       appid: MINI_APP_ID,
