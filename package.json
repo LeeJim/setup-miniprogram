@@ -4,6 +4,7 @@
   "description": "MiniProgram CI for good",
   "main": "index.js",
   "scripts": {
+    "build": "ncc build index.js -o dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/LeeJim/setup-miniprogram/issues"
   },
-  "homepage": "https://github.com/LeeJim/setup-miniprogram#readme"
+  "homepage": "https://github.com/LeeJim/setup-miniprogram#readme",
+  "devDependencies": {
+    "@actions/core": "^1.6.0",
+    "@vercel/ncc": "^0.32.0"
+  },
+  "dependencies": {
+    "miniprogram-ci": "^1.6.10"
+  }
 }
