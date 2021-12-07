@@ -45,8 +45,3 @@ outputs:
 runs:
   using: "node16"
   main: "./dist/index.js"
-  steps:
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '14.6.0'
-    - run: npm install
