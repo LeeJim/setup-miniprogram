@@ -1,0 +1,47 @@
+name: setup-miniprogram
+description: wechat miniprogram-ci
+branding:
+  icon: box
+  color: green
+inputs:
+  project_type: 
+    description: project type (miniProgram/miniProgramPlugin/miniGame/miniGamePlugin)
+    required: true
+    default: 'miniProgram'
+  action_type:
+    description: upload action type  (preview/upload/packNpm/packNpmManually/cloud)
+    required: false
+    default: preview
+  project_path: 
+    description: where the file project.config.json at
+    required: false
+    default: '' # root dir
+  version:
+    description: pub version
+    required: false
+    default: 0.0.1
+  remark: 
+    description: upload version's remark
+    required: false
+  robots:
+    description: config which robot to pub, use branch or commit username as key
+    required: false
+  es6:
+    required: false
+    default: false
+  es7:
+    required: false
+    default: false
+  minify:
+    required: false
+    default: false
+
+outputs:
+  preview_pic_dir: # id of output
+    description: 'the preview qrcode dir'
+  source_map_save_path:
+    description: source-map-save-path
+
+runs:
+  using: "node16"
+  main: "./index.js"
