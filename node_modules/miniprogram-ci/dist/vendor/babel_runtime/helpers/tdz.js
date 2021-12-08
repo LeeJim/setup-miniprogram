@@ -1,0 +1,1 @@
+function _tdzError(r){throw new ReferenceError(r+" is not defined - temporal dead zone")}module.exports=_tdzError;

@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default={info:console.info,log:console.log,warn:console.warn,error:console.error,debug:(...e)=>{}};

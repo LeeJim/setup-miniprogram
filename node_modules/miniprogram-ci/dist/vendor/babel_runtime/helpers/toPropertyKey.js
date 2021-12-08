@@ -1,0 +1,1 @@
+var _typeof=require("./typeof"),toPrimitive=require("./toPrimitive");function _toPropertyKey(e){var r=toPrimitive(e,"string");return"symbol"===_typeof(r)?r:String(r)}module.exports=_toPropertyKey;

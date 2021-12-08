@@ -1,0 +1,1 @@
+function _classStaticPrivateFieldSpecSet(e,t,r,a){if(e!==t)throw new TypeError("Private static access of wrong provenance");if(r.set)r.set.call(e,a);else{if(!r.writable)throw new TypeError("attempted to set read only private field");r.value=a}return a}module.exports=_classStaticPrivateFieldSpecSet;

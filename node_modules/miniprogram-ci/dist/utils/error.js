@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.CodeError=void 0;const tslib_1=require("tslib"),log_1=(0,tslib_1.__importDefault)(require("./log"));class CodeError extends Error{constructor(r,e){super(r),log_1.default.error(e,r),this.code=e}}exports.CodeError=CodeError;

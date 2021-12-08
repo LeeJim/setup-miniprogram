@@ -1,0 +1,1 @@
+function _classStaticPrivateFieldSpecGet(e,t,a){if(e!==t)throw new TypeError("Private static access of wrong provenance");return a.get?a.get.call(e):a.value}module.exports=_classStaticPrivateFieldSpecGet;

@@ -1,0 +1,1 @@
+function _asyncIterator(r){var t;if("undefined"!=typeof Symbol){if(Symbol.asyncIterator&&null!=(t=r[Symbol.asyncIterator]))return t.call(r);if(Symbol.iterator&&null!=(t=r[Symbol.iterator]))return t.call(r)}throw new TypeError("Object is not async iterable")}module.exports=_asyncIterator;

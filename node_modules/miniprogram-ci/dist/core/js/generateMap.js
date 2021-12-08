@@ -1,0 +1,1 @@
+"use strict";const babel7=()=>require("@babel/core"),generateMap=(e,r)=>{let a=void 0;try{if(a=require("@babel/core").transform(r,{presets:[],babelrc:!1,sourceFileName:e,sourceMaps:!0,configFile:!1}),null==a?void 0:a.map)return Object.assign(Object.assign({},a.map),{version:""+(null==a?void 0:a.map.version)})}catch(e){}};module.exports=generateMap;

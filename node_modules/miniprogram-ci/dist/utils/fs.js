@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});const fsagent_1=require("./fsagent");exports.default=new fsagent_1.FSAgent;

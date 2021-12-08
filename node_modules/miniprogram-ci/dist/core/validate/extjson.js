@@ -1,0 +1,1 @@
+"use strict";const T=require("./validate"),appJSON=require("./appjson"),pageJSON=require("./pagejson");module.exports=new T("object",!1,Object.assign(Object.assign({},appJSON.value),{extEnable:new T("boolean",!0),extAppid:new T("string",!0),directCommit:new T("boolean",!1),ext:new T("object",!1),extPages:new T("object",!1,pageJSON),pages:new T("array",!1,new T("string",!0))}));

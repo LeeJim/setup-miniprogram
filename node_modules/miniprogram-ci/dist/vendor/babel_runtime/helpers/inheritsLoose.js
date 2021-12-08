@@ -1,0 +1,1 @@
+function _inheritsLoose(o,t){o.prototype=Object.create(t.prototype),o.prototype.constructor=o,o.__proto__=t}module.exports=_inheritsLoose;

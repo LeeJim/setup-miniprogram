@@ -1,0 +1,1 @@
+var AwaitValue=require("./AwaitValue");function _awaitAsyncGenerator(a){return new AwaitValue(a)}module.exports=_awaitAsyncGenerator;

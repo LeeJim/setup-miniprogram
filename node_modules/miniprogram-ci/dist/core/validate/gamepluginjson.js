@@ -1,0 +1,1 @@
+"use strict";const T=require("./validate");module.exports=new T("object",!1,{main:new T("string",!1)});

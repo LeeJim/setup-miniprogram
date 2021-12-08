@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.Barrier=void 0;class Barrier{constructor(){this._isOpen=!1,this._promise=new Promise((e,r)=>{this._completePromise=e})}isOpen(){return this._isOpen}open(){this._isOpen=!0,this._completePromise(!0)}wait(){return this._promise}}exports.Barrier=Barrier;

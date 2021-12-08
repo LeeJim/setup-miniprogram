@@ -1,0 +1,1 @@
+function _classPrivateFieldDestructureSet(e,t){if(!t.has(e))throw new TypeError("attempted to set private field on non-instance");var r=t.get(e);if(r.set)return"__destrObj"in r||(r.__destrObj={set value(t){r.set.call(e,t)}}),r.__destrObj;if(!r.writable)throw new TypeError("attempted to set read only private field");return r}module.exports=_classPrivateFieldDestructureSet;

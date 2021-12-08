@@ -1,0 +1,1 @@
+"use strict";const perf_hooks_1=require("perf_hooks");console.log("start at",perf_hooks_1.performance.now());const fs=require("./fs");require("./module"),module.exports=fs;

@@ -1,0 +1,1 @@
+function _classStaticPrivateMethodGet(t,e,r){if(t!==e)throw new TypeError("Private static access of wrong provenance");return r}module.exports=_classStaticPrivateMethodGet;

@@ -1,0 +1,1 @@
+var temporalUndefined=require("./temporalUndefined"),tdz=require("./tdz");function _temporalRef(e,r){return e===temporalUndefined?tdz(r):e}module.exports=_temporalRef;

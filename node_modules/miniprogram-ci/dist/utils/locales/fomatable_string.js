@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.FormatableString=void 0;class FormatableString extends String{format(...t){const e=t[0];let r=this;return"[object Array]"===Object.prototype.toString.call(e)?(e.forEach(t=>{r=r.replace("%s",t)}),r):(t.forEach(t=>{r=r.replace("%s",t)}),""+r)}}exports.FormatableString=FormatableString;

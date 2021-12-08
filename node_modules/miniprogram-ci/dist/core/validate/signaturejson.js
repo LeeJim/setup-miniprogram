@@ -1,0 +1,1 @@
+"use strict";const T=require("./validate");module.exports=new T("object",!1,{signature:new T("array",!0,new T("object",!1,{path:new T("string",!0),md5:new T("string",!0)})),provider:new T("string",!0)});

@@ -1,0 +1,1 @@
+"use strict";const T=require("./validate");module.exports=new T("object",!1,{miniprogramRoot:new T("string",!1),pluginRoot:new T("string",!1),packOptions:new T("object",!1,{ignore:new T("array",!1,new T("object",!1,{type:new T("string",!0),value:new T("string",!0)}))}),setting:new T("object",!1,{babelSetting:new T("object",!1,{outputPath:new T("string",!1)})})});

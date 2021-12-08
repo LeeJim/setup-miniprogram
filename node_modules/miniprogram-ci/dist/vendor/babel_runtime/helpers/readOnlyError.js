@@ -1,0 +1,1 @@
+function _readOnlyError(r){throw new Error('"'+r+'" is read-only')}module.exports=_readOnlyError;
