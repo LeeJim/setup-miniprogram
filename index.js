@@ -30,12 +30,16 @@ async function run() {
         es6: core.getInput('es6'),
         es7: core.getInput('es7'),
         minify: core.getInput('minify'),
-        onProgressUpdate: console.log,
+      },
+      onProgressUpdate() {
+        console.log('==', arguments);
       }
     });
 
     console.log('ci result: ', ans);
+    core.setOutput('preview_pic_dir', '');
   } catch (error) {
+    console.log('catch error', error);
     core.setFailed(error);
   }
 }
