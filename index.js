@@ -31,9 +31,6 @@ async function run() {
         es7: core.getInput('es7'),
         minify: core.getInput('minify'),
       },
-      onProgressUpdate() {
-        console.log('==', arguments);
-      }
     });
 
     console.log('ci result: ', ans);
