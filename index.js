@@ -8,6 +8,7 @@ async function run() {
   try {
     const projectType = core.getInput('project_type') || 'miniProgram';
     const actionType = core.getInput('action_type') || 'preview';
+    const needPackNpm = core.getInput('need-pack-npm') || false;
     const projectPath = core.getInput('project_path') || './';
     const version = core.getInput('version') || '1.0.0';
     const ignores = core.getInput('ignores') || [];
@@ -32,6 +33,13 @@ async function run() {
     if (actionType == 'preview') {
       optional.qrcodeFormat = core.getInput('qrcodeFormat') || 'base64';
       optional.qrcodeOutputDest = qrcodeDesc;
+    }
+
+    if (needPackNpm) {
+      const warning = await ci.packNpm(project, {
+        ignores: core.getInput('pack_npm_ignore_list') || [],
+      })
+      console.warn(warning);
     }
 
     const ans = await ci[actionType]({
