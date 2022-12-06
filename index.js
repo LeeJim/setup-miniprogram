@@ -55,7 +55,9 @@ async function run() {
     });
 
     console.log('ci result: ', ans);
-    core.setOutput('preview-qrcode', fs.readFileSync(qrcodeDesc, { encoding: 'utf-8'}));
+    if (actionType == 'preview') {
+      core.setOutput('preview-qrcode', fs.readFileSync(qrcodeDesc, { encoding: 'utf-8'}));
+    }
   } catch (error) {
     console.log('catch error', error);
     core.setFailed(error);
