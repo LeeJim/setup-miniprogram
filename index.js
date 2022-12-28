@@ -22,7 +22,7 @@ async function getRobot() {
   } catch(err) {
     console.log('upload artifact failed: ', err)
   } finally {
-    fs.writeFileSync(filepath, id, { encoding: 'utf-8'});
+    fs.writeFileSync(filepath, id.toString(), { encoding: 'utf-8'});
   
     await artifactClient.uploadDir(artifactName, [filepath], GITHUB_WORKSPACE)
   }
