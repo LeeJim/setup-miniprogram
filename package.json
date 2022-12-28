@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/LeeJim/setup-miniprogram#readme",
   "devDependencies": {
+    "@actions/artifact": "^1.1.0",
     "@actions/core": "^1.6.0",
     "@vercel/ncc": "^0.32.0"
   },

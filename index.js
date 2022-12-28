@@ -9,7 +9,7 @@ async function getRobot() {
   const { GITHUB_WORKSPACE } = process.env;
   const artifactClient = artifact.create()
   const artifactName = 'miniprogram-robot';
-  let id = 0;
+  let id = 1;
 
   try {
     await artifactClient.downloadArtifact(artifactName);
@@ -17,7 +17,8 @@ async function getRobot() {
     const filepath = path.resolve(GITHUB_WORKSPACE, 'miniprogram-robot.text');
   
     if (fs.existsSync(filepath)) {
-      id = parseInt(fs.readFileSync(filepath, { encoding: 'utf-8' }) + 1, 10);
+      const nextId = parseInt(fs.readFileSync(filepath, { encoding: 'utf-8' }) + 1, 10);
+      id = nextId % 30;
     }
       
     fs.writeFileSync(filepath, id, { encoding: 'utf-8'});
