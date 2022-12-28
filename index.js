@@ -9,23 +9,22 @@ async function getRobot() {
   const { GITHUB_WORKSPACE } = process.env;
   const artifactClient = artifact.create()
   const artifactName = 'miniprogram-robot';
+  const filepath = path.resolve(GITHUB_WORKSPACE, 'miniprogram-robot.text');
   let id = 1;
 
   try {
     await artifactClient.downloadArtifact(artifactName);
     
-    const filepath = path.resolve(GITHUB_WORKSPACE, 'miniprogram-robot.text');
-  
     if (fs.existsSync(filepath)) {
       const nextId = parseInt(fs.readFileSync(filepath, { encoding: 'utf-8' }) + 1, 10);
       id = nextId % 30;
     }
-      
+  } catch(err) {
+    console.log('upload artifact failed: ', err)
+  } finally {
     fs.writeFileSync(filepath, id, { encoding: 'utf-8'});
   
     await artifactClient.uploadDir(artifactName, [filepath], GITHUB_WORKSPACE)
-  } catch(err) {
-    console.log('upload artifact failed: ', err)
   }
 
   console.log('current robot is', id);
