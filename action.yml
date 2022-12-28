@@ -23,8 +23,8 @@ inputs:
   remark: 
     description: upload version's remark
     required: false
-  robots:
-    description: config which robot to pub, use branch or commit username as key
+  robot:
+    description: config which robot to publish
     required: false
   es6:
     required: false
