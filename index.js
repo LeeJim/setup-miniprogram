@@ -3,34 +3,6 @@ const core = require('@actions/core');
 // const github = require('@actions/github');
 const fs = require('fs-extra');
 const ci = require('miniprogram-ci');
-const artifact = require('@actions/artifact');
-
-async function getRobot() {
-  const { GITHUB_WORKSPACE } = process.env;
-  const artifactClient = artifact.create()
-  const artifactName = 'miniprogram-robot';
-  const filepath = path.resolve(GITHUB_WORKSPACE, 'miniprogram-robot.text');
-  let id = 1;
-
-  try {
-    await artifactClient.downloadArtifact(artifactName);
-    
-    if (fs.existsSync(filepath)) {
-      const nextId = parseInt(fs.readFileSync(filepath, { encoding: 'utf-8' }) + 1, 10);
-      id = nextId % 30;
-    }
-  } catch(err) {
-    console.log('upload artifact failed: ', err)
-  } finally {
-    fs.writeFileSync(filepath, id.toString(), { encoding: 'utf-8'});
-  
-    await artifactClient.uploadArtifact(artifactName, [filepath], GITHUB_WORKSPACE)
-  }
-
-  console.log('current robot is', id);
-
-  return id;
-}
 
 async function run() {
   try {
@@ -41,7 +13,7 @@ async function run() {
     const version = core.getInput('version') || '1.0.0';
     const ignores = core.getInput('ignores') || [];
     const desc = core.getInput('desc') || '自动上传版本';
-    const robot = core.getInput('robot') || await getRobot();
+    const robot = core.getInput('robot') || 1;
     const { MINI_APP_ID, MINI_APP_PRIVATE_KEY, GITHUB_WORKSPACE: sourceDir = '' } = process.env;
     const uploadDir = path.join(sourceDir, projectPath);
 
@@ -71,10 +43,13 @@ async function run() {
       console.warn(warning);
     }
 
+    console.log('current robot: ', robot);
+
     const ans = await ci[actionType]({
       project,
       version,
       desc,
+      robot,
       ...optional,
       setting: {
         es6: core.getInput('es6'),

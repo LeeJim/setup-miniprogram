@@ -2,7 +2,7 @@
   "name": "setup-miniprogram",
   "version": "1.0.0",
   "description": "MiniProgram CI for good",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "ncc build index.js -o dist",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/LeeJim/setup-miniprogram#readme",
   "devDependencies": {
-    "@actions/artifact": "^1.1.0",
     "@actions/core": "^1.6.0",
     "@vercel/ncc": "^0.32.0"
   },
