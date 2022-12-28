@@ -24,7 +24,7 @@ async function getRobot() {
   } finally {
     fs.writeFileSync(filepath, id.toString(), { encoding: 'utf-8'});
   
-    await artifactClient.uploadDir(artifactName, [filepath], GITHUB_WORKSPACE)
+    await artifactClient.uploadArtifact(artifactName, [filepath], GITHUB_WORKSPACE)
   }
 
   console.log('current robot is', id);
